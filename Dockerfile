@@ -1,19 +1,23 @@
-FROM ubuntu
+FROM ubuntu:latest
 
-MAINTAINER Bjonness406
+MAINTAINER mezz64 <jtmihalic@gmail.com>
 
 # install packages
-RUN apt-get update && apt-get install -y \
- curl \
- libav-tools
- 
+RUN apt-get update && \
+    apt-get install -yq mkvtoolnix ffmpeg
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 #make config folder
 RUN \
  mkdir /config 
- 
+
 #Add start script
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
+
+#Add conversion script
+ADD converteac3.sh /converteac3.sh
+RUN chmod +x /converteac3.sh
 
 VOLUME ["/config"]
 
