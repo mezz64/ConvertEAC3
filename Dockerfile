@@ -2,9 +2,12 @@ FROM ubuntu:latest
 
 MAINTAINER mezz64 <jtmihalic@gmail.com>
 
+ENV USER_ID=99
+GROUP_ID=100
+
 # install packages
 RUN apt-get update && \
-    apt-get install -yq mkvtoolnix ffmpeg
+    apt-get install -yq mkvtoolnix ffmpeg && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #make config folder
