@@ -3,7 +3,7 @@ FROM ubuntu:latest
 MAINTAINER mezz64 <jtmihalic@gmail.com>
 
 ENV USER_ID=99
-GROUP_ID=100
+ENV GROUP_ID=100
 
 # install packages
 RUN apt-get update && \
