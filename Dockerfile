@@ -19,8 +19,8 @@ ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
 #Add conversion script
-ADD converteac3.sh /converteac3.sh
-RUN chmod +x /converteac3.sh
+ADD converteac3.sh /config/converteac3.sh
+RUN chmod +x /config/converteac3.sh
 
 VOLUME ["/config"]
 
