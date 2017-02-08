@@ -10,13 +10,13 @@ usermod -g 100 nobody
 usermod -d /home nobody
 chown -R nobody:users /home
 
-chsh -s /bin/bash nobody
+#chsh -s /bin/bash nobody
 
 cp /converteac3.sh /config/converteac3.sh
 chown -R nobody:users /config
 
 echo "[Info] Starting script"
-#bash /config/converteac3.sh
-su - nobody -c /config/converteac3.sh
+bash /config/converteac3.sh
+#su - nobody -c /config/converteac3.sh
 
 echo "Stopping Container, script finished.."

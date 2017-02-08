@@ -180,6 +180,9 @@ fi
     echo "Removing temporary AC3 file...."
     rm -f "$AC3FILE"
 
+    # Fix permissions for unraid
+    chown nobody:users "$NEWFILE"
+
   else
     echo "Codec is already AC3, nothing to do..."
   fi
